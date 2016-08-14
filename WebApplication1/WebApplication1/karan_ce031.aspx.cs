@@ -55,12 +55,41 @@ namespace WebApplication1
         protected void cmdUpdate_Click(object sender, EventArgs e)
         {
             //int i;
-            if(lstBackColor.SelectedItem.Selected==false)
+            // if(lstBackColor.SelectedItem.Selected==false)
+            //{
+            //  pnlCard.BackColor = Color.FromName(lstBackColor.SelectedItem.Text);
+            //}
+
+            string s1 = lstBackColor.SelectedItem.Text.ToString();
+            pnlCard.BackColor = System.Drawing.Color.FromName(s1);
+           
+            lstBackColor.BackColor = System.Drawing.Color.FromName(s1);
+
+            var select = lstFontName.SelectedItem.Value;
+            if (select == "Times New Roman")
             {
-                pnlCard.BackColor = Color.FromName(lstBackColor.SelectedItem.Text);
+                // I tried doing all of these:
+                pnlCard.Font.ToString=true;
+                }
+
+            if (select == "Arial")
+            {
+                // I tried doing all of these:
+                lblGreeting.Visible = true;
             }
-          
-           // lblGreeting.Font.Name = lstFontName.SelectedItem.Text;
+
+            if (select == "Verdana")
+            {
+                // I tried doing all of these:
+                lblGreeting.Visible = true;
+            }
+
+            if (select == "Tahoma")
+            {
+                // I tried doing all of these:
+                lblGreeting.Visible = true;
+            }
+            // lblGreeting.Font.Name = lstFontName.SelectedItem.Text;
             if (Int32.Parse(txtFontSize.Text) > 0)
             {
                 lblGreeting.Font.Size = FontUnit.Point(Int32.Parse(txtFontSize.Text));
