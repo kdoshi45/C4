@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Drawing;
 
+
 namespace WebApplication1
 {
     public partial class karan_ce031 : System.Web.UI.Page
@@ -53,8 +54,13 @@ namespace WebApplication1
 
         protected void cmdUpdate_Click(object sender, EventArgs e)
         {
-            pnlCard.BackColor = Color.FromName(lstBackColor.SelectedItem.Text);
-            lblGreeting.Font.Name = lstFontName.SelectedItem.Text;
+            //int i;
+            if(lstBackColor.SelectedItem.Selected==false)
+            {
+                pnlCard.BackColor = Color.FromName(lstBackColor.SelectedItem.Text);
+            }
+          
+           // lblGreeting.Font.Name = lstFontName.SelectedItem.Text;
             if (Int32.Parse(txtFontSize.Text) > 0)
             {
                 lblGreeting.Font.Size = FontUnit.Point(Int32.Parse(txtFontSize.Text));
